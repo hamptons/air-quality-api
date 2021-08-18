@@ -1,7 +1,7 @@
-version: 2.1
-
 orbs:
   aws-ecr: circleci/aws-ecr@7.0.0
+
+version: 2.1
 
 workflows:
   build_and_push_image:
@@ -12,7 +12,9 @@ workflows:
           aws-secret-access-key: AWS_SECRET_ACCESS_KEY
           create-repo: true
           dockerfile: Dockerfile
-          path: ../api/Dockerfile
+          no-output-timeout: 20m
+          path: ./api
           region: AWS_REGION
           repo: air-quality-api
+          skip-when-tags-exist: false
           tag: "$CIRCLE_SHA1"
