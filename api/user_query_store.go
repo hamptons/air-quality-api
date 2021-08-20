@@ -9,11 +9,11 @@ import (
 )
 
 const (
-	host     = "heycar.cmjsewdja2wa.us-east-2.rds.amazonaws.com"
+	host     = ""
 	port     = 5432
-	user     = "airqualityapi"
-	password = "HeyCarT3st"
-	dbname   = "airquality"
+	user     = ""
+	password = ""
+	dbname   = ""
 )
 
 // DB is deliberately global as it should live between requests 
