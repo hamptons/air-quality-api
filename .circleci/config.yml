@@ -16,7 +16,7 @@ workflows:
           no-output-timeout: 20m
           path: ./api
           region: AWS_REGION
-          repo: air-quality-api
+          repo: airquality
           skip-when-tags-exist: false
           tag: "$CIRCLE_SHA1"
       - aws-ecs/run-task:
