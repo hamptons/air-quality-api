@@ -29,7 +29,7 @@ type AirVisualResponse struct {
 	} `json:"data"`
 }
 
-var apiKey = "XN6S5LmLBiGTZFHTq"
+var apiKey = "4dbe7370-ef12-489a-a43e-d6bd725b7d62"
 
 type AirQualityQueryer interface {
 	FindAirQualityIndex(lat float64, lon float64) (CityAirQuality, error)
