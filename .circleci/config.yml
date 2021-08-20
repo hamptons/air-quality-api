@@ -28,4 +28,4 @@ workflows:
           cluster: $CLUSTER_NAME
           launch-type: ''
           subnet-ids: 'subnet-18f81b62, subnet-84c19bc9, subnet-d9f75fb1'
-          task-definition: airquality-task:2
+          task-definition: airquality-task:3
