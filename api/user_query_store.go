@@ -9,13 +9,12 @@ import (
 	"os"
 )
 
-var (
-	host     = os.Getenv("PG_HOST")
-	port     = os.Getenv("PG_PORT")
-	user     = os.Getenv("PG_USER")
-	password = os.Getenv("PG_PASSWORD")
-	dbname   = os.Getenv("PG_DB")
-)
+var host := os.Getenv("PG_HOST")
+var port := os.Getenv("PG_PORT")
+var user := os.Getenv("PG_USER")
+var password := os.Getenv("PG_PASSWORD")
+var dbname := os.Getenv("PG_DB")
+
 
 // DB is deliberately global as it should live between requests 
 var db *sql.DB
@@ -49,6 +48,7 @@ type PostgresCityStore struct {
 }
 
 func InitDatabase() (storer CityQueryStorer, retriever CityQueryRetriever, err error) {
+	fmt.Println(host, port, user, password, dbname)
 	psqlInfo := fmt.Sprintf("host=%s port=%d user=%s password=%s dbname=%s sslmode=disable",
 		host, port, user, password, dbname)
 
