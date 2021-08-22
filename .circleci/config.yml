@@ -27,5 +27,6 @@ workflows:
             capacityProvider=FARGATE_SPOT,weight=1
           cluster: airquality-cluster
           launch-type: ''
-          subnet-ids: 'subnet-0cec0e08d01205883,subnet-01b0f0cb387883676'
-          task-definition: airquality-task:2
+          security-group-ids: 'sg-0be5549d8b0aac790'
+          subnet-ids: 'subnet-0eaf25282e6483da9,subnet-0117de73eb14687cb'
+          task-definition: airquality-task:4
