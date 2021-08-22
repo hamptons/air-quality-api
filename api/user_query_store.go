@@ -9,11 +9,11 @@ import (
 	"os"
 )
 
-var host := os.Getenv("PG_HOST")
-var port := os.Getenv("PG_PORT")
-var user := os.Getenv("PG_USER")
-var password := os.Getenv("PG_PASSWORD")
-var dbname := os.Getenv("PG_DB")
+var host = os.Getenv("PG_HOST")
+var port = os.Getenv("PG_PORT")
+var user = os.Getenv("PG_USER")
+var password = os.Getenv("PG_PASSWORD")
+var dbname = os.Getenv("PG_DB")
 
 
 // DB is deliberately global as it should live between requests 
