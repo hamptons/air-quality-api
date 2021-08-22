@@ -6,14 +6,15 @@ import (
 	_ "github.com/lib/pq"
 	"log"
 	"time"
+	"os"
 )
 
-const (
-	host     = ""
-	port     = 5432
-	user     = ""
-	password = ""
-	dbname   = ""
+var (
+	host     = os.Getenv("PG_HOST")
+	port     = os.Getenv("PG_PORT")
+	user     = os.Getenv("PG_USER")
+	password = os.Getenv("PG_PASSWORD")
+	dbname   = os.Getenv("PG_DB")
 )
 
 // DB is deliberately global as it should live between requests 
