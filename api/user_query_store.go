@@ -10,7 +10,7 @@ import (
 )
 
 var host = os.Getenv("PG_HOST")
-var port = os.Getenv("PG_PORT")
+var port = 5432
 var user = os.Getenv("PG_USER")
 var password = os.Getenv("PG_PASSWORD")
 var dbname = os.Getenv("PG_DB")
