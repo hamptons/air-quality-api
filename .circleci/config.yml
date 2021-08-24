@@ -15,14 +15,14 @@ workflows:
           dockerfile: Dockerfile
           no-output-timeout: 20m
           path: ./api
-          region: AWS_REGION
+          region: AWS_REGION_ECR
           repo: airquality
           skip-when-tags-exist: false
           tag: "$CIRCLE_SHA1"
       - aws-ecs/deploy-service-update:
           requires:
             - aws-ecr/build-and-push-image
-          aws-region: AWS_REGION_ECS
+          aws-region: AWS_REGION
           service-name: "${AWS_RESOURCE_NAME_PREFIX}-service"
           family: "${AWS_RESOURCE_NAME_PREFIX}-task"
           cluster-name: "${AWS_RESOURCE_NAME_PREFIX}-cluster"
