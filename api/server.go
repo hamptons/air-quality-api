@@ -37,7 +37,7 @@ func CreateHandlers(storer CityQueryStorer, retriever CityQueryRetriever, qualit
 }
 
 func handlePingRequest(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "Air Quality API running")
+	fmt.Fprintf(w, "Air Quality API running...deployed by CircleCI")
 }
 
 func createQueriedCitiesHandler(cqr CityQueryRetriever) http.Handler {
