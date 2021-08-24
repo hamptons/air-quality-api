@@ -19,3 +19,10 @@ workflows:
           repo: airquality
           skip-when-tags-exist: false
           tag: "$CIRCLE_SHA1"
+      - aws-ecs/deploy-service-update:
+          requires:
+            - aws-ecr/build-and-push-image
+          aws-region: "us-east-1"
+          family: "${AWS_RESOURCE_NAME_PREFIX}-task"
+          cluster-name: "${AWS_RESOURCE_NAME_PREFIX}-cluster"
+          container-image-name-updates: "container=${AWS_RESOURCE_NAME_PREFIX},tag=${CIRCLE_SHA1}"
